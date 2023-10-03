@@ -1,2 +1,52 @@
+<!-- Data Binding -->
+<!-- string Interpolation -->
 <h1>{{title}}</h1>
-<h2>Testing</h2>
+
+<!-- Property Binding -->
+<input type="text" [disabled]="isDisabled">
+
+
+<!-- Event binding -->
+<br><br>
+<button type="submit" (click)="EventBinding(1,5)">EventBinding Testing</button>
+
+
+<!-- two way Binding -->
+<br><br>
+<input type="text" [(ngModel)]="name">
+<div>{{name}}</div>
+
+
+<!-- Directives
+Structural - *ngIf, *ngFor, *ngSwitch -->
+<br><br>
+<ul>
+  <li *ngIf="students.length>0">
+    Students Present
+    <ol>
+      <li *ngFor="let std of students">
+        {{std}}
+      </li>
+    </ol>
+  </li>
+  <li *ngIf="students.length==0">No Student</li>
+</ul>
+
+<ul ngSwitch="students.length">
+  <li *ngSwitchCase=0>Zero Student</li>
+  <li *ngSwitchCase=1>One Student</li>
+  <li *ngSwitchCase=2>Two Student</li>
+  <li *ngSwitchDefault>More Students..</li>
+</ul>
+
+<!-- Attribute Directives - [ngStyle], [ngClass] -->
+<div [ngStyle]="{'background-color':bgColor, 'color':color}">ngStyle Attribute</div>
+<br>
+<div [ngClass]="className">ngClass Attribute</div>
+
+
+<!-- Pipes -->
+<h3>{{str | uppercase}}</h3>
+<h3>{{str | lowercase}}</h3>
+<h3>{{123.56 | currency:'INR'}}</h3>
+<h3>{{dob|date|uppercase}}</h3>
