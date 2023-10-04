@@ -50,3 +50,10 @@ Structural - *ngIf, *ngFor, *ngSwitch -->
 <h3>{{str | lowercase}}</h3>
 <h3>{{123.56 | currency:'INR'}}</h3>
 <h3>{{dob|date|uppercase}}</h3>
+
+
+<!-- get data using HTTPClient  -->
+<ul *ngFor= "let item of studentsJSON">
+  <li>ID: {{item.id}}</li>
+  <li>Name: {{item.name}}</li>
+</ul>
